@@ -17,10 +17,4 @@ public class PupilApplicationConfig {
         pupilPan.setColor(Color.BLUE);
         return pupilPan;
     }
-
-    @Bean
-    public Textbook textbook() {
-        Textbook pupilTextbook = new Textbook("Geography", 200);
-        return pupilTextbook;
-    }
 }
