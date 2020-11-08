@@ -8,5 +8,18 @@
     <artifactId>JavaSpringFramework1Homework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+<!--    1. Подключить Spring и настроить проект для работы с "Ним"!-->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+    </dependencies>
 
 </project>
