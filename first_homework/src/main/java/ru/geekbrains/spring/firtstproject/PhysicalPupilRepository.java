@@ -1,19 +1,22 @@
-package ru.geekbrains.spring.myDemo;
+package ru.geekbrains.spring.firtstproject;
+
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AnotherPupilRepository implements PupilRepository{
+@Repository
+public class PhysicalPupilRepository implements PupilRepository{
     private List<Pupil> pupils;
 
     @PostConstruct
     public void init() {
         this.pupils = new ArrayList<>();
-        this.pupils.add(new Pupil(1L, "Kuskov Igor Vladimirovich", "7B", "+7(234)6839524", "KusIg@mail.ru"));
-        this.pupils.add(new Pupil(2L, "Vetrov Arseny vitalievich", "9D", "7(207)2057295", "VetAr@gmail.com"));
-        this.pupils.add(new Pupil(3L, "Larin Dmitry Konstantinovich", "10A", "+7(734)5038573", "LarinDx@yandex.ru"));
+        this.pupils.add(new Pupil(1L, "Ivanov Ivan Ivanovich", "7A", "+7(999)7353326", "IvanovI@mail.ru"));
+        this.pupils.add(new Pupil(2L, "Petrov Petr Petrovich", "9B", "+7(364)4738672", "PetrovP@gmail.com"));
+        this.pupils.add(new Pupil(3L, "Sidorov Ivan Petrovich", "11C", "+7(123)1234567", "SidorovIP@yandex.ru"));
     }
 
     @Override

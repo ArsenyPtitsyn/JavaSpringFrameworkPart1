@@ -1,4 +1,4 @@
-package ru.geekbrains.spring.myDemo;
+package ru.geekbrains.spring.firtstproject;
 
 public class Pupil {
     private long id;

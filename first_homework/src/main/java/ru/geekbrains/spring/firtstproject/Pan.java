@@ -1,4 +1,4 @@
-package ru.geekbrains.spring.myDemo;
+package ru.geekbrains.spring.firtstproject;
 
 import java.awt.*;
 
