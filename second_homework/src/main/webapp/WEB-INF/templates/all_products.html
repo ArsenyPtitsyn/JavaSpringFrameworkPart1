@@ -19,10 +19,10 @@
         </thead>
         <tbody>
         <!--/*@thymesVar id="students" type="java.util.List<com.geekbrains.spring.mvc.model.Student>"*/-->
-        <tr th:each="s : ${students}">
-            <td th:text="${s.id}"></td>
-            <td th:text="${s.name}"></td>
-            <td th:text="${s.score}"></td>
+        <tr th:each="p : ${products}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.title}"></td>
+            <td th:text="${p.cost}"></td>
         </tr>
         </tbody>
     </table>

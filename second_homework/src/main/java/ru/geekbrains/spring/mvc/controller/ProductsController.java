@@ -10,20 +10,22 @@ import ru.geekbrains.spring.mvc.service.ProductsService;
 
 import java.util.List;
 
+// root:  http://localhost:8189/app/products
+
 @Controller
 @RequestMapping("/products")
-public class ProductController {
+public class ProductsController {
     private final ProductsService productsService;
 
     @Autowired
-    public ProductController(ProductsService productsService) {
+    public ProductsController(ProductsService productsService) {
         this.productsService = productsService;
     }
 
     @GetMapping
-    public String showAllProducts(Model model) {
+    public String showAllStudents(Model model) {
         List<Product> products = productsService.getAllProducts();
         model.addAttribute("products", products);
-        return "all_students";
+        return "all_products";
     }
 }

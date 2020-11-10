@@ -1,11 +1,13 @@
 package ru.geekbrains.spring.mvc.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.geekbrains.spring.mvc.model.Product;
 import ru.geekbrains.spring.mvc.repository.ProductRepository;
 
 import java.util.List;
 
+@Service
 public class ProductsService {
     private ProductRepository productRepository;
 
