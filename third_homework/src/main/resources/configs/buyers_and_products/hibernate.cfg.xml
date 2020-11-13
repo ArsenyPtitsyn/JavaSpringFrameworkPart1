@@ -13,7 +13,9 @@
         <property name="show_sql">false</property>
         <property name="current_session_context_class">thread</property>
 
-<!--  Здесь мы будем мапить соответствующие классы-->
-<!-- <mapping class="com.flamexander.hibernate.many_to_many.Reader"/>-->
+        <mapping class="ru.geekbrains.hibernate.buyers_and_products.Buyer"/>
+        <mapping class="ru.geekbrains.hibernate.buyers_and_products.Order"/>
+        <mapping class="ru.geekbrains.hibernate.buyers_and_products.OrderDetails"/>
+        <mapping class="ru.geekbrains.hibernate.buyers_and_products.Product"/>
     </session-factory>
 </hibernate-configuration>
