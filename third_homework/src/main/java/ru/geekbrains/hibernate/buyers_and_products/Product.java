@@ -16,11 +16,6 @@ public class Product {
     @Column(name = "fld_cost")
     private float price;
 
-    @Override
-    public String toString() {
-        return String.format("Product title: %s, product price: %f", title, price);
-    }
-
     public Product() {
     }
 
@@ -51,5 +46,10 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Product title: %s, product price: %f", title, price);
     }
 }
