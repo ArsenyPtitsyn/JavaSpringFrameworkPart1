@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class PrepareDataApp {
     public static void forcePrepareData() {
         SessionFactory factory = new Configuration()
-                .configure("configs/customers_and_goods/hibernate.cfg.xml")
+                .configure("configs/many_to_many/hibernate.cfg.xml")
                 .buildSessionFactory();
         Session session = null;
         try {
