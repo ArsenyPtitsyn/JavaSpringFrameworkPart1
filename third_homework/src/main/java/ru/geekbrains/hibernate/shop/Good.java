@@ -4,40 +4,29 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tbl_goods")
+@Table(name = "goods")
 public class Good {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "fld_good_title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "fld_cost")
-    private float cost;
+    @Column(name = "price")
+    private int price;
 
     @ManyToMany
     @JoinTable(
-        name = "tbl_orders",
-        joinColumns = @JoinColumn(name = "id_good"),
-        inverseJoinColumns = @JoinColumn(name = "id_customer")
+        name = "goods_customers",
+        joinColumns = @JoinColumn(name = "good_id"),
+        inverseJoinColumns = @JoinColumn(name = "customer_id")
     )
     private List<Customer> customers;
 
     public Good() {
-    }
-
-    public void setCost(float cost) {
-        this.cost = cost;
-    }
-
-    public List<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
     }
 
     public Long getId() {
@@ -56,16 +45,24 @@ public class Good {
         this.title = title;
     }
 
-    public float getCost() {
-        return cost;
+    public int getPrice() {
+        return price;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 
     @Override
     public String toString() {
-        return String.format("Good title: %s, product price: %f", title, cost);
+        return String.format("Good id: %d, good title: %s, good price: %d", id, title, price);
     }
 }

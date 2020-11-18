@@ -4,22 +4,22 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tbl_customers")
+@Table(name = "customers")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_customer")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name = "fld_name")
+    @Column(name = "name")
     private String name;
 
     @ManyToMany
     @JoinTable(
-        name = "tbl_orders",
-        joinColumns = @JoinColumn(name = "id_customer"),
-        inverseJoinColumns =@JoinColumn(name = "id_good")
+        name = "goods_customers",
+        joinColumns = @JoinColumn(name = "customer_id"),
+        inverseJoinColumns =@JoinColumn(name = "good_id")
     )
     private List<Good> goods;
 
@@ -52,6 +52,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return String.format("Customer: %s", name);
+        return String.format("Customer id = %d, name = %s", id,name);
     }
 }

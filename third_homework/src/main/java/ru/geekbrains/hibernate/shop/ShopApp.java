@@ -12,7 +12,7 @@ public class ShopApp {
         PrepareDataApp.forcePrepareData();
 
         SessionFactory factory = new Configuration()
-                .configure("configs/many_to_many/hibernate.cfg.xml")
+                .configure("configs/shop/hibernate.cfg.xml")
                 .buildSessionFactory();
 
         Session session = null;
@@ -27,14 +27,14 @@ public class ShopApp {
             }
 
             List<Customer> customers = session
-                    .createQuery("SELECT c FROM tbl_customers c ORDER BY size(c.goods) DESC")
+                    .createQuery("SELECT c FROM Customer c ORDER BY size(c.goods) DESC")
                     .getResultList();
             System.out.println(customers);
             session.getTransaction().commit();
 
             session = factory.getCurrentSession();
             session.beginTransaction();
-            List<Good> allGoods = session.createQuery("SELECT g FROM tbl_goods g").getResultList();
+            List<Good> allGoods = session.createQuery("SELECT g FROM Good g").getResultList();
             Customer c = session.get(Customer.class, 2L);
             allGoods.stream().forEach(b -> {
                 if(b.getId() > 4 && b.getId() < 8) {
@@ -46,7 +46,7 @@ public class ShopApp {
             System.out.println(1);
             session = factory.getCurrentSession();
             session.beginTransaction();
-            session.createQuery("DELETE FROM tbl_goods g WHERE g.id = 1").executeUpdate();
+            session.createQuery("DELETE FROM Good g WHERE g.id = 1").executeUpdate();
             session.getTransaction().commit();
             System.out.println(2);
 //            session = factory.getCurrentSession();

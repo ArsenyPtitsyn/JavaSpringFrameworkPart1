@@ -13,12 +13,12 @@ import java.util.stream.Collectors;
 public class PrepareDataApp {
     public static void forcePrepareData() {
         SessionFactory factory = new Configuration()
-                .configure("configs/many_to_many/hibernate.cfg.xml")
+                .configure("configs/shop/hibernate.cfg.xml")
                 .buildSessionFactory();
         Session session = null;
         try {
-            String sql = Files.lines(Paths.get("full.sql")).collect(Collectors.joining(" "));
-            session =factory.getCurrentSession();
+            String sql = Files.lines(Paths.get("third_homework/full.sql")).collect(Collectors.joining(" "));
+            session = factory.getCurrentSession();
             session.beginTransaction();
             session.createNativeQuery(sql).executeUpdate();
             session.getTransaction().commit();
@@ -26,8 +26,9 @@ public class PrepareDataApp {
             e.printStackTrace();
         } finally {
             factory.close();
-            if (session != null)
-            session.close();
+            if (session != null) {
+                session.close();
+            }
         }
     }
 
