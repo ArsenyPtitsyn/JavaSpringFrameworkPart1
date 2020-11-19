@@ -1,0 +1,3 @@
+DROP TABLE goods IF EXISTS;
+CREATE TABLE IF NOT EXISTS goods (id bigserial, title VARCHAR(255), price int, PRIMARY KEY (id));
+INSERT INTO goods (title, price) VALUES ('Fork', 70), ('Spoon', 80), ('Tea spoon', 50), ('knife', 350), ('Ladle', 300), ('Plate', 200), ('Dish', 250), ('Cup', 130), ('Glass', 65), ('Plate2', 340), ('Spoon2', 105), ('Fork2', 95), ('Tea spoon2', 75), ('Knife2', 700), ('Ladle2', 155), ('Dish2', 300), ('Cup2', 115), ('Glass2', 45), ('Wineglass', 150), ('Wineglass2', 325);
