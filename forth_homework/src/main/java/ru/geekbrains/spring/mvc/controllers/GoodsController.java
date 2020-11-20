@@ -30,10 +30,14 @@ public class GoodsController {
                                   @RequestParam(name = "max_price", required = false) Integer maxPrice) {
         Specification<Good> spec = Specification.where(null);
         if (minPrice != null) {
-            spec = spec.and(GoodsSpecifications.priceGEThan(minPrice));
+            if (spec != null) {
+                spec = spec.and(GoodsSpecifications.priceGEThan(minPrice));
+            }
         }
         if (maxPrice != null) {
-            spec = spec.and(GoodsSpecifications.priceLEThan(maxPrice));
+            if (spec != null) {
+                spec = spec.and(GoodsSpecifications.priceLEThan(maxPrice));
+            }
         }
 
         List<Good> goods = goodsService.findAll(spec, pageNumber).getContent();
