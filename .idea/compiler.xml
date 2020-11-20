@@ -10,6 +10,7 @@
         <module name="third_homework" />
         <module name="forth_homework" />
         <module name="first_homework" />
+        <module name="fifth_homework" />
       </profile>
     </annotationProcessing>
   </component>
