@@ -13,5 +13,4 @@ import java.util.List;
 
 @Repository
 public interface ProductsRepository extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
-    Page<Product> search(Specification<Product> spec, PageRequest searchString);
 }

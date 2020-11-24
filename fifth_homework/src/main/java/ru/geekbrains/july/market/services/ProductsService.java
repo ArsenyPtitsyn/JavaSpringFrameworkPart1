@@ -43,7 +43,7 @@ public class ProductsService {
     public Page<Product> search(Specification<Product> spec, Integer page) {
         if (page < 1L)
             page = 1;
-        return productsRepository.search(spec, PageRequest.of(page - 1, 10));
+        return productsRepository.findAll(spec, PageRequest.of(page - 1, 10));
     }
 
 }
