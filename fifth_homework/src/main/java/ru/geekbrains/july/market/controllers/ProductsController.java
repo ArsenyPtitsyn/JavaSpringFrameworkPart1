@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.july.market.entities.Product;
 import ru.geekbrains.july.market.services.ProductsService;
 import ru.geekbrains.july.market.utils.ProductFilter;
-import ru.geekbrains.july.market.utils.ProductSearch;
 
 import java.util.Map;
 
@@ -30,16 +29,6 @@ public class ProductsController {
         model.addAttribute("products", products);
         model.addAttribute("filterDef", productFilter.getFilterDefinition().toString());
         return "all_products";
-    }
-
-    @GetMapping("/search")
-    public String search(Model model, @RequestParam Map<String, String> requestParams) {
-        Integer pageNumber = Integer.parseInt(requestParams.getOrDefault("p", "1"));
-        ProductSearch productSearch = new ProductSearch(requestParams);
-        Page<Product> products = productsService.search(productSearch.getSpec(), pageNumber);
-        model.addAttribute("products", products);
-        model.addAttribute("searchDef", productSearch.getSearchDefinition().toString());
-        return "search_products";
     }
 
     @GetMapping("/add")
