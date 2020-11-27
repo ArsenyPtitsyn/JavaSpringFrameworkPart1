@@ -38,7 +38,7 @@
             <input type="number" th:value="${param.max_price != null ? param.max_price : ''}" class="form-control" name="max_price">
         </div>
         <button type="submit" class="btn btn-primary">Применить</button>
-        <a class="btn btn-secondary" th:href="@{'/products?min_price=&max_price='}"><button>Сбросить</button></a>
+        <a class="btn btn-secondary" th:href="@{'/products?min_price=&max_price='}">Сбросить</a>
     </form>
 
     <h4>Список товаров:</h4>
